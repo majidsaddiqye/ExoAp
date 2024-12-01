@@ -49,6 +49,7 @@ const Navbar = () => {
         <span className="sm:hidden">
           <IoIosMenu />
         </span>
+        
 
         <div className="links hidden sm:flex gap-6">
           {["Home", "About", "Pricing", "Contact"].map((item, index) => (

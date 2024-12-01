@@ -22,9 +22,9 @@ const Spread = () => {
         </div>
 
         <div className="mt-10 text-center">
-          <h1 className="capitalize text-6xl tracking-tighter">Spread</h1>
-          <h1 className="capitalize text-6xl tracking-tighter">the News</h1>
-          <p className="w-2/3 mx-auto mt-5 text-md leading-2">
+          <h1 className="capitalize text-6xl sm:text-9xl tracking-tighter">Spread</h1>
+          <h1 className="capitalize text-6xl sm:text-9xl tracking-tighter">the News</h1>
+          <p className="w-2/3 sm:w-1/2 mx-auto mt-5 sm:mt-10 sm:text-xl text-md leading-2">
             Find out more about our work on these leading design and technology
             platforms.
           </p>
