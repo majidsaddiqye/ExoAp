@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import React from "react";
 
 const Spread = () => {
@@ -22,8 +23,25 @@ const Spread = () => {
         </div>
 
         <div className="mt-10 text-center">
-          <h1 className="capitalize text-6xl sm:text-9xl tracking-tighter">Spread</h1>
-          <h1 className="capitalize text-6xl sm:text-9xl tracking-tighter">the News</h1>
+          {["Spread", "the News"].map((item, index) => {
+            return (
+              <h1
+                key={index}
+                className="capitalize text-6xl sm:text-9xl tracking-tighter overflow-hidden"
+              >
+                <motion.span
+                  initial={{ rotate: 90, y: "40%", opacity: 0 }}
+                  whileInView={{ rotate: 0, y: 0, opacity: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ ease: [0.22, 1, 0.36, 1], duration: 0.8 }}
+                  className="inline-block origin-left "
+                >
+                  {item}
+                </motion.span>
+              </h1>
+            );
+          })}
+
           <p className="w-2/3 sm:w-1/2 mx-auto mt-5 sm:mt-10 sm:text-xl text-md leading-2">
             Find out more about our work on these leading design and technology
             platforms.
@@ -38,7 +56,9 @@ const Spread = () => {
           >
             <circle cx="25" cy="25" r="23" data-v-5152decb=""></circle>
           </svg>
-          <h3 className="text-sm border-b-[1px] border-zinc-900 pb-1 ">Browse all news</h3>
+          <h3 className="text-sm border-b-[1px] border-zinc-900 pb-1 ">
+            Browse all news
+          </h3>
         </div>
       </div>
     </div>

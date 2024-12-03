@@ -1,3 +1,5 @@
+import { Power4 } from "gsap/all";
+import { motion } from "motion/react";
 import React from "react";
 import { IoIosMenu } from "react-icons/io";
 
@@ -5,7 +7,12 @@ const Navbar = () => {
   return (
     <div className="w-full fixed z-[999]">
       <div className=" max-w-screen-xl mx-auto px-5 sm:px-10 py-5 sm:py-10 flex items-center justify-between text-white">
-        <div className="logo">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ ease: Power4.easeInOut, duration: 1 }}
+          className="logo"
+        >
           <svg
             viewBox="0 0 95 25"
             fill="none"
@@ -44,20 +51,29 @@ const Navbar = () => {
               data-v-1932cced=""
             ></path>
           </svg>
-        </div>
+        </motion.div>
 
-        <span className="sm:hidden">
+        <motion.span
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ ease: Power4.easeInOut, duration: 1 }}
+          className="sm:hidden"
+        >
           <IoIosMenu />
-        </span>
-        
+        </motion.span>
 
-        <div className="links hidden sm:flex gap-6">
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ ease: Power4.easeInOut, duration: 1 }}
+          className="links hidden sm:flex gap-6 "
+        >
           {["Home", "About", "Pricing", "Contact"].map((item, index) => (
-            <a className="text-xs font-light font-['TWK_Lausanne']" key={index}>
+            <a className="text-lg font-light font-['TWK_Lausanne']" key={index}>
               {item}
             </a>
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
